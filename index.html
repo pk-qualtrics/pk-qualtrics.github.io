@@ -1,114 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Ketch tag -->
-    <script>
-      !(function () {
-        (window.semaphore = window.semaphore || []),
-          (window.ketch = function () {
-            window.semaphore.push(arguments);
-          });
-        var e = new URLSearchParams(document.location.search),
-          o = e.has("property") ? e.get("property") : "website_smart_tag",
-          n = document.createElement("script");
-        (n.type = "text/javascript"),
-          (n.src =
-            "https://global.ketchcdn.com/web/v3/config/nova/".concat(
-              o,
-              "/boot.js"
-            )),
-          (n.defer = n.async = !0),
-          document.getElementsByTagName("head")[0].appendChild(n);
-      })();
-    </script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QBank</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <!-- A src script tag with purposes mapped -->
-    <script
-      src="scripts/my-script.js"
-      type="text/plain"
-      data-purposes="analytics_900"
-    ></script>
+  <style>
 
-    <!-- An inline script tag with purposes mapped -->
-    <script type="text/plain" data-purposes="analytics">
-      alert('An inline script tag!')
-    </script>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
 
-    <!-- An iframe element with purposes mapped -->
-    <iframe
-      data-src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=zbJZhTvwNkR_6qMw"
-      data-purposes="data_broking"
-      width="560"
-      height="315"
-      title="YouTube video player"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerpolicy="strict-origin-when-cross-origin"
-      allowfullscreen
-    ></iframe>
+    body{
+      font-family:'Inter',sans-serif;
+      background:#f5f8fc;
+      color:#102a43;
+    }
 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Manual Orchestration Demo</title>
-    <style>
-      body {
-        font-family: "Arial", sans-serif;
-        background-color: #f8f8f8;
-        margin: 0;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-      }
+    header{
+      background:#002b5c;
+      padding:20px 60px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
 
-      h1 {
-        color: #333;
-      }
+    .logo{
+      color:white;
+      font-size:28px;
+      font-weight:800;
+    }
 
-      button {
-        font-size: 18px;
-        padding: 10px 20px;
-        margin: 10px;
-        cursor: pointer;
-        border: none;
-        border-radius: 5px;
-        color: #fff;
-        transition: background-color 0.3s ease;
-      }
+    nav{
+      display:flex;
+      gap:30px;
+    }
 
-      .consent-button {
-        background-color: lightblue;
-      }
+    nav a{
+      color:white;
+      text-decoration:none;
+      font-weight:500;
+    }
 
-      .consent-button:hover {
-        background-color: #87cefa; /* Lighter blue on hover */
-      }
 
-      .preferences-button {
-        background-color: lightgrey;
-      }
+    .hero{
+      background:linear-gradient(rgba(0,25,55,0.72), rgba(0,25,55,0.72)),
+      url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1600&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+      color:white;
+      padding:140px 60px;
+      text-align:center;
+    }
 
-      .preferences-button:hover {
-        background-color: #d3d3d3; /* Lighter grey on hover */
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Script Blocking Demo</h1>
-    <p>
-      You may view allowed and blocked scripts by running
-      <code>KetchLog.getWrappedTags()</code> in the console!
-    </p>
-    <button class="consent-button" onclick="window.ketch('showConsent')">
-      Show Consent
-    </button>
-    <button
-      class="preferences-button"
-      onclick="window.ketch('showPreferences')"
-    >
-      Show Preferences
-    </button>
-  </body>
+    .hero h1{
+      font-size:64px;
+      margin-bottom:20px;
+    }
+
+    .hero p{
+      font-size:20px;
+      max-width:700px;
+      margin:auto;
+      margin-bottom:40px;
+    }
+
+    .hero-buttons{
+      display:flex;
+      justify-content:center;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      background:#00a3ff;
+      color:white;
+      padding:16px 28px;
+      border-radius:12px;
+      text-decoration:none;
+      font-weight:600;
+    }
+
+    footer{
+      background:#001b36;
+      color:#d0d7e2;
+      text-align:center;
+      padding:30px;
+    }
+
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">QBank</div>
+
+  <nav>
+    <a href="credit-cards.html">Credit Cards</a>
+    <a href="banking.html">Banking</a>
+    <a href="rewards.html">Rewards</a>
+    <a href="support.html">Support</a>
+  </nav>
+</header>
+
+<section class="hero">
+
+  <h1>Modern Banking Built Around You</h1>
+
+  <p>
+    Explore premium credit cards, digital banking solutions,
+    exclusive rewards, and dedicated customer support.
+  </p>
+
+  <div class="hero-buttons">
+    <a href="credit-cards.html" class="btn">Explore Cards</a>
+    <a href="banking.html" class="btn">Digital Banking</a>
+  </div>
+
+</section>
+
+<footer>
+  © 2026 QBank Financial Services. All Rights Reserved.
+</footer>
+
+</body>
+<!--BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET-->
+
+<script type='text/javascript'>
+
+(function(){var g=function(g){
+
+this.go=function(){var a=document.createElement("script");a.type="text/javascript";a.src=g;document.body&&document.body.appendChild(a)};
+
+this.start=function(){var t=this;"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",function(){t.go()},!1):window.attachEvent&&window.attachEvent("onload",function(){t.go()}):t.go()};};
+
+try{(new g("https://zn8cxtwnna7h8chjv-ugamsandbox.siteintercept.qualtrics.com/SIE/?Q_ZID=ZN_8cXtWNna7H8cHjv")).start()}catch(i){}})();
+
+</script><div id='ZN_8cXtWNna7H8cHjv'><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
+
+<!--END WEBSITE FEEDBACK SNIPPET-->
+
 </html>
