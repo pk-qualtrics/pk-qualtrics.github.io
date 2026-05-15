@@ -3,26 +3,75 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Support</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html,
+body{
+  width:100%;
+  overflow-x:hidden;
+}
+
 body{
   font-family:'Inter',sans-serif;
-  margin:0;
   background:#f5f8fc;
+  color:#102a43;
 }
+
+/* =========================
+   HEADER / NAVBAR
+========================= */
 
 header{
   background:#002b5c;
   padding:20px 60px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:relative;
 }
-header a{
+
+.logo{
   color:white;
   text-decoration:none;
-  font-size:24px;
-  font-weight:700;
+  font-size:28px;
+  font-weight:800;
 }
+
+nav{
+  display:flex;
+  gap:30px;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  font-weight:500;
+  font-size:15px;
+}
+
+.menu-toggle{
+  display:none;
+  background:transparent;
+  border:none;
+  color:white;
+  font-size:30px;
+  cursor:pointer;
+}
+
+/* =========================
+   CONTENT
+========================= */
 
 .container{
   padding:70px 60px;
@@ -35,8 +84,30 @@ header a{
   box-shadow:0 10px 30px rgba(0,0,0,0.06);
 }
 
-h1,h2{
+.support-box h1{
   color:#002b5c;
+  margin-bottom:20px;
+  font-size:42px;
+}
+
+.support-box p{
+  line-height:1.8;
+  color:#486581;
+  margin-bottom:30px;
+}
+
+.support-box h2{
+  color:#002b5c;
+  margin-bottom:18px;
+}
+
+.support-box ul{
+  padding-left:20px;
+}
+
+.support-box li{
+  margin-bottom:12px;
+  color:#486581;
 }
 
 button{
@@ -45,48 +116,177 @@ button{
   border:none;
   padding:16px 28px;
   border-radius:12px;
-  margin-top:20px;
+  margin-top:25px;
   font-size:16px;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s ease;
+}
+
+button:hover{
+  background:#003f7d;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width:992px){
+
+  header{
+    padding:20px 30px;
+  }
+
+  .container{
+    padding:50px 30px;
+  }
+
+  .support-box h1{
+    font-size:36px;
+  }
+}
+
+/* =========================
+   MOBILE NAVBAR
+========================= */
+
+@media (max-width:768px){
+
+  header{
+    padding:20px;
+  }
+
+  .menu-toggle{
+    display:block;
+  }
+
+  nav{
+    display:none;
+    flex-direction:column;
+    position:absolute;
+    top:100%;
+    left:0;
+    width:100%;
+    background:#002b5c;
+    padding:10px 0;
+    z-index:1000;
+  }
+
+  nav.show{
+    display:flex;
+  }
+
+  nav a{
+    padding:16px 20px;
+    border-top:1px solid rgba(255,255,255,0.1);
+  }
+
+  .container{
+    padding:40px 20px;
+  }
+
+  .support-box{
+    padding:30px 24px;
+    border-radius:18px;
+  }
+
+  .support-box h1{
+    font-size:32px;
+  }
+
+  button{
+    width:100%;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width:480px){
+
+  .logo{
+    font-size:24px;
+  }
+
+  .support-box h1{
+    font-size:28px;
+  }
+
+  .support-box h2{
+    font-size:22px;
+  }
+
+  .support-box p,
+  .support-box li{
+    font-size:15px;
+  }
 }
 
 </style>
 </head>
+
 <body>
 
 <header>
-  <a href="index.html">QBank</a>
+
+  <a href="index.html" class="logo">QBank</a>
+
+  <button class="menu-toggle" id="menu-toggle">
+    ☰
+  </button>
+
+  <nav id="navbar">
+    <a href="index.html">Home</a>
+    <a href="credit-cards.html">Credit Cards</a>
+    <a href="banking.html">Banking</a>
+    <a href="rewards.html">Rewards</a>
+    <a href="support.html">Support</a>
+  </nav>
+
 </header>
 
 <div class="container">
 
-<div class="support-box">
+  <div class="support-box">
 
-<h1>Customer Support</h1>
+    <h1>Customer Support</h1>
 
-<p>
-  Our support specialists are available 24/7 to help with account access,
-  fraud prevention, card management, and digital banking support.
-</p>
+    <p>
+      Our support specialists are available 24/7 to help with account access,
+      fraud prevention, card management, and digital banking support.
+    </p>
 
-<h2>Contact Channels</h2>
+    <h2>Contact Channels</h2>
 
-<ul>
-  <li>Phone Support</li>
-  <li>Live Chat</li>
-  <li>Email Assistance</li>
-  <li>Branch Appointments</li>
-</ul>
+    <ul>
+      <li>Phone Support</li>
+      <li>Live Chat</li>
+      <li>Email Assistance</li>
+      <li>Branch Appointments</li>
+    </ul>
 
-<button>Contact Support</button>
+    <button>Contact Support</button>
 
-</div>
-    <div class="Qbank_EmbeddedFeedbackContainer">
-    
   </div>
 
+  <div class="Qbank_EmbeddedFeedbackContainer"></div>
+
 </div>
 
+<script>
+
+const menuToggle = document.getElementById("menu-toggle");
+const navbar = document.getElementById("navbar");
+
+menuToggle.onclick = function () {
+  navbar.classList.toggle("show");
+};
+
+</script>
+
 </body>
+
 <!--BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET-->
 
 <script type='text/javascript'>
@@ -99,7 +299,11 @@ this.start=function(){var t=this;"complete"!==document.readyState?window.addEven
 
 try{(new g("https://zn8cxtwnna7h8chjv-ugamsandbox.siteintercept.qualtrics.com/SIE/?Q_ZID=ZN_8cXtWNna7H8cHjv")).start()}catch(i){}})();
 
-</script><div id='ZN_8cXtWNna7H8cHjv'><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
+</script>
+
+<div id='ZN_8cXtWNna7H8cHjv'>
+  <!--DO NOT REMOVE-CONTENTS PLACED HERE-->
+</div>
 
 <!--END WEBSITE FEEDBACK SNIPPET-->
 
