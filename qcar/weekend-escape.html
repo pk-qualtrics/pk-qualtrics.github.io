@@ -19,6 +19,18 @@ body{background:#f5f7fa;color:var(--brand-text);font-family:'Segoe UI',Tahoma,Ge
 .btn-success{background:var(--brand-green);border:none}
 .page-content{flex:1 0 auto}
 .footer{padding:25px;text-align:center}
+  .old-price {
+    text-decoration: line-through;
+    color: #6b7280;
+    margin-right: 8px;
+}
+
+.new-price {
+    color: #dc2626;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
 </style>
 <script src="https://assets.adobedtm.com/666644a00be2/24ec11c0a0b4/launch-68820c08ea6d-development.min.js" async></script>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -38,7 +50,8 @@ body{background:#f5f7fa;color:var(--brand-text);font-family:'Segoe UI',Tahoma,Ge
   <div class="row g-4">
     <div class="col-md-4">
       <div class="card p-4 h-100">
-        <span class="badge-plan">$</span>
+        <span class="badge-plan">  <span class="old-price"><s>$55/day</s></span>
+  <span class="new-price">$44/day</span></span>
         <h3 class="mt-3">City Break</h3>
         <p class="mb-4">A budget-friendly weekend for one to two days of local adventure.</p>
         <ul>
@@ -52,7 +65,8 @@ body{background:#f5f7fa;color:var(--brand-text);font-family:'Segoe UI',Tahoma,Ge
 
     <div class="col-md-4">
       <div class="card p-4 h-100">
-        <span class="badge-plan">$$</span>
+        <span class="badge-plan">  <span class="old-price"><s>$99/day</s></span>
+  <span class="new-price">$79/day</span></span>
         <h3 class="mt-3">Scenic Getaway</h3>
         <p class="mb-4">A comfortable option with extra room for a relaxed weekend trip.</p>
         <ul>
@@ -66,7 +80,8 @@ body{background:#f5f7fa;color:var(--brand-text);font-family:'Segoe UI',Tahoma,Ge
 
     <div class="col-md-4">
       <div class="card p-4 h-100">
-        <span class="badge-plan">$$$</span>
+        <span class="badge-plan">  <span class="old-price"><s>$139/day</s></span>
+  <span class="new-price">$111/day</span></span>
         <h3 class="mt-3">Luxury Escape</h3>
         <p class="mb-4">Premium comfort and extras for a polished weekend getaway.</p>
         <ul>
