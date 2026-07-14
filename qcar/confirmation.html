@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Booking Confirmed | QCar</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+:root{--brand-green:#169b45;--brand-green-dark:#0f6f33;--brand-text:#1f2937;--brand-white:#fff}
+html,body{height:100%}
+body{background:#f5f7fa;color:var(--brand-text);font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;min-height:100vh;display:flex;flex-direction:column;margin:0}
+.navbar,.footer{background:var(--brand-green)}
+.navbar-brand,.nav-link,.footer{color:var(--brand-white)!important}
+.nav-link.active,.nav-link:hover{color:var(--brand-white)!important;background:rgba(255,255,255,.16);border-radius:6px}
+.nav-link.active{font-weight:700;box-shadow:inset 0 0 0 1px rgba(255,255,255,.24)}
+.hero{background:linear-gradient(135deg,var(--brand-green),var(--brand-green-dark));color:var(--brand-white);padding:70px 20px;text-align:center}
+.card{border:none;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.12)}
+.btn-success{background:var(--brand-green);border:none}
+.page-content{flex:1 0 auto}
+.footer{padding:25px;text-align:center}
+</style>
+<script src="https://assets.adobedtm.com/666644a00be2/24ec11c0a0b4/launch-68820c08ea6d-development.min.js" async></script>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+<div id="navbar"></div>
+
+<main class="page-content">
+<section class="hero">
+  <div class="container">
+    <h1>Booking Confirmed</h1>
+    <p>Your weekend getaway request has been received. We’ll be in touch shortly.</p>
+  </div>
+</section>
+
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-7">
+      <div class="card p-4 text-center">
+        <h2 id="plan-title">Your Reservation</h2>
+        <p id="plan-description" class="lead">We have prepared your booking details.</p>
+        <div class="mt-4">
+          <a href="deals.html" class="btn btn-success me-2">Back to Deals</a>
+          <a href="weekend-escape.html" class="btn btn-outline-success">Choose Another Option</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</main>
+
+<footer class="footer">
+  <p>© 2026 QCar • Thank you for booking with us.</p>
+</footer>
+
+<script src="nav.js"></script>
+<script>
+(function () {
+  const params = new URLSearchParams(window.location.search);
+  const plan = params.get('plan');
+  const planTitle = document.getElementById('plan-title');
+  const planDescription = document.getElementById('plan-description');
+
+  const details = {
+    budget: { title: 'City Break Reserved', description: 'Your budget weekend escape is confirmed. Expect compact comfort and flexible cancellation.' },
+    standard: { title: 'Scenic Getaway Reserved', description: 'Your mid-range weekend escape is confirmed. Enjoy extra comfort and priority pickup.' },
+    premium: { title: 'Luxury Escape Reserved', description: 'Your premium weekend escape is confirmed. Luxury comfort and concierge support are ready for your trip.' }
+  };
+
+  const selected = details[plan] || details.budget;
+  planTitle.textContent = selected.title;
+  planDescription.textContent = selected.description;
+})();
+</script>
+
+<!--BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET-->
+<script type='text/javascript'>
+(function(){var g=function(g){
+this.go=function(){var a=document.createElement("script");a.type="text/javascript";a.src=g;document.body&&document.body.appendChild(a)};
+this.start=function(){var t=this;"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",function(){t.go()},!1):window.attachEvent&&window.attachEvent("onload",function(){t.go()}):t.go()};};
+try{(new g("https://zn3rwu5knx2dqx04k-ugamsandbox.siteintercept.qualtrics.com/SIE/?Q_ZID=ZN_3Rwu5knX2Dqx04k")).start()}catch(i){}})();
+</script><div id='ZN_3Rwu5knX2Dqx04k'><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
+<!--END WEBSITE FEEDBACK SNIPPET-->
+</body>
+</html>
