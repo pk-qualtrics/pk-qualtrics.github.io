@@ -1,7 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<!--BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QNova</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f7fb;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        header {
+            background: #005a9c;
+            color: #fff;
+            padding: 18px 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,.08);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        /* Main Content */
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 20px;
+        }
+
+        .card {
+            background: #fff;
+            max-width: 650px;
+            width: 100%;
+            text-align: center;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0,0,0,.08);
+        }
+
+        .card h1 {
+            color: #005a9c;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        button {
+            background: #0078d4;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background .3s;
+        }
+
+        button:hover {
+            background: #005fa3;
+        }
+
+        #msg {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #0078d4;
+        }
+
+        /* Footer */
+        footer {
+            background: #1f2937;
+            color: #fff;
+            text-align: center;
+            padding: 25px 20px;
+            margin-top: auto;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 24px;
+            }
+
+            .card {
+                padding: 30px 20px;
+            }
+
+            .card h1 {
+                font-size: 28px;
+            }
+        }
+		.logo {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.logo:hover {
+    text-decoration: none;
+    opacity: 0.9;
+}
+    </style>
+		<!--BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET-->
 
 	<script type='text/javascript'>
 
@@ -16,46 +156,51 @@
 	</script><div id='ZN_dpacSHqe3qkrCBr'><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
 
 	<!--END WEBSITE FEEDBACK SNIPPET-->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sample Local Webpage</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #f4f7fb;
-            text-align: center;
-            padding: 50px;
-        }
-        .card {
-            background: white;
-            max-width: 600px;
-            margin: auto;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-        button {
-            background: #0078d4;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 6px;
-            cursor: pointer;
-        }
-    </style>
 </head>
+
 <body>
-    <div class="card">
-        <h1>Hello, World!</h1>
-        <p>This is a sample webpage running locally.</p>
-        <button onclick="showMessage()">Click Me</button>
-        <p id="msg"></p>
-    </div>
+
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">QNova</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="card">
+            <h1>Welcome to QNova</h1>
+
+            <p>
+                Thank you for visiting QNova. This sample page demonstrates
+                a simple responsive layout with a fixed header, centered
+                content, and a footer that always stays at the bottom of
+                the page.
+            </p>
+
+            <button onclick="showMessage()" id="clickMeBtn">
+                Click Me
+            </button>
+
+            <p id="msg"></p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 QNova. All Rights Reserved.</p>
+
+        <p style="margin-top:10px;">
+            <a href="#">Accessibility</a> |
+            <a href="#">Terms of Use</a> |
+            <a href="privacy-settings.html">Privacy Policy</a> 
+        </p>
+    </footer>
 
     <script>
         function showMessage() {
-            document.getElementById('msg').innerText = 'Button clicked successfully!';
+            document.getElementById("msg").innerText =
+                "Thanks for visiting QNova! Your button click was successful.";
         }
     </script>
+
 </body>
 </html>
