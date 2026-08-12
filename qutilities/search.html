@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search | qUtilities</title>
+
+    <link rel="stylesheet" href="style.css">
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+
+        .search-page {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .search-title {
+            font-size: 42px;
+            margin-bottom: 30px;
+        }
+
+        .search-bar {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+
+        .search-bar input {
+            flex: 1;
+            padding: 14px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .search-bar button {
+            background: #7c5cff;
+            color: white;
+            border: none;
+            padding: 14px 25px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .result {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 4px solid #7c5cff;
+            box-shadow: 0 2px 10px rgba(0,0,0,.08);
+        }
+
+        .result h3 {
+            margin-bottom: 10px;
+        }
+
+        .result h3 a {
+            color: #7c5cff;
+        }
+
+        .category {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+    </style>
+
+<!--BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET-->
+
+<script type='text/javascript'>
+
+(function(){var g=function(g){
+
+this.go=function(){var a=document.createElement("script");a.type="text/javascript";a.src=g;document.body&&document.body.appendChild(a)};
+
+this.start=function(){var t=this;"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",function(){t.go()},!1):window.attachEvent&&window.attachEvent("onload",function(){t.go()}):t.go()};};
+
+try{(new g("https://zn3drcqv8ajkvhgn0-ugamsandbox.siteintercept.qualtrics.com/SIE/?Q_ZID=ZN_3dRCqv8AjkVHGN0")).start()}catch(i){}})();
+
+</script><div id='ZN_3dRCqv8AjkVHGN0'><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
+
+<!--END WEBSITE FEEDBACK SNIPPET-->
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo">
+             <a href="/index.html">qUtilities</a>
+        </div>
+
+        <nav>
+            <a href="/community/avondale.html"Community</a>
+            <a href="search.html">Search</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Alerts</a>
+            <a href="#">My Account</a>
+        </nav>
+
+    </header>
+
+    <section class="search-page">
+
+        <h1 class="search-title" id="searchTitle">
+            Search Results
+        </h1>
+
+        <div class="search-bar">
+
+            <input
+                type="text"
+                id="searchBox"
+                placeholder="Search qUtilities..."
+            >
+
+            <button id="searchBtn">
+                Go
+            </button>
+
+        </div>
+
+        <div id="results"></div>
+
+    </section>
+
+<script>
+
+const searchData = [
+
+{
+    title: "Community Investment Program",
+    url: "content/community-investment.html",
+    category: "News & Events",
+    description: "Learn how qUtilities is supporting local communities."
+},
+
+{
+    title: "Water Conservation Tips",
+    url: "content/water-conservation.html",
+    category: "Smart Water Use",
+    description: "Helpful guidance to reduce household water consumption."
+},
+
+{
+    title: "Emergency Preparedness Guide",
+    url: "content/emergency-preparedness.html",
+    category: "Safety",
+    description: "Resources and planning tips for utility emergencies."
+},
+
+{
+    title: "Pay My Bill",
+    url: "pay-my-bill.html",
+    category: "Customer Service",
+    description: "Manage utility payments securely online."
+},
+
+{
+    title: "Moving Services",
+    url: "moving.html",
+    category: "Customer Service",
+    description: "Start, stop or transfer utility service."
+},
+
+{
+    title: "Water Quality Reports",
+    url: "water-quality.html",
+    category: "Water Quality",
+    description: "Annual testing and compliance reports."
+}
+
+];
+
+function performSearch(term){
+
+    let html = "";
+
+    searchData.forEach(function(item){
+
+        if(
+            item.title.toLowerCase().includes(term) ||
+            item.description.toLowerCase().includes(term) ||
+            item.category.toLowerCase().includes(term)
+        ){
+
+            html += `
+                <div class="result">
+
+                    <h3>
+                        <a href="${item.url}">
+                            ${item.title}
+                        </a>
+                    </h3>
+
+                    <div class="category">
+                        ${item.category}
+                    </div>
+
+                    <p>
+                        ${item.description}
+                    </p>
+
+                </div>
+            `;
+        }
+
+    });
+
+    if(html === ""){
+
+        html = `
+            <div class="result">
+                <h3>No results found</h3>
+                <p>Please try another search term.</p>
+            </div>
+        `;
+    }
+
+    $("#results").html(html);
+
+    $("#searchTitle").text(
+        'Search Results for "' + term + '"'
+    );
+}
+
+const params =
+    new URLSearchParams(window.location.search);
+
+const searchTerm =
+    params.get("q") || "";
+
+$("#searchBox").val(searchTerm);
+
+if(searchTerm !== ""){
+    performSearch(searchTerm.toLowerCase());
+}
+
+$("#searchBtn").click(function(){
+
+    const term =
+        $("#searchBox").val().toLowerCase();
+
+    performSearch(term);
+
+});
+
+$("#searchBox").keypress(function(e){
+
+    if(e.which === 13){
+
+        $("#searchBtn").click();
+
+    }
+
+});
+
+</script>
+
+</body>
+
+</html>
