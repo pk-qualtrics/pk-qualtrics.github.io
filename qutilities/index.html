@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>qUtilities</title>
+
+    <link rel="stylesheet" href="style.css">
+
+<style>
+.hero {
+
+    position: relative;
+
+    height: 720px;
+
+    overflow: hidden;
+}
+
+.hero-bg {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.welcome-card-overlay {
+
+    position: absolute;
+
+    left: 140px;
+    top: 105px;
+
+    width: 380px;
+
+    background: white;
+
+    padding: 35px;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,.15);
+}
+
+.welcome-card-overlay h1 {
+
+    font-size: 54px;
+
+    margin-bottom: 20px;
+}
+
+.selector-card-overlay {
+
+    position: absolute;
+
+    right: 140px;
+    top: 105px;
+
+    width: 450px;
+
+    background: #f2f2f2;
+
+    padding: 40px;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,.15);
+}
+
+.selector-card-overlay h2 {
+
+    margin-bottom: 20px;
+}
+
+.selector-card-overlay label {
+
+    display: block;
+
+    margin-top: 20px;
+    margin-bottom: 8px;
+
+    font-weight: 600;
+}
+
+.carousel-dots {
+
+    position: absolute;
+
+    bottom: 40px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    gap: 12px;
+}
+
+.dot {
+
+    width: 18px;
+    height: 18px;
+
+    border-radius: 50%;
+
+    background: white;
+}
+
+.dot.active {
+
+    background: #7c5cff;
+}
+</style>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>
+
+const slides = [
+    "/images/slide1.jpg",
+    "/images/slide2.jpg"
+];
+
+let current = 0;
+
+setInterval(() => {
+
+    current = (current + 1) % slides.length;
+
+    document.getElementById("heroImage").src = slides[current];
+
+}, 4000);
+
+</script>
+
+<!--BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET-->
+
+<script type='text/javascript'>
+
+(function(){var g=function(g){
+
+this.go=function(){var a=document.createElement("script");a.type="text/javascript";a.src=g;document.body&&document.body.appendChild(a)};
+
+this.start=function(){var t=this;"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",function(){t.go()},!1):window.attachEvent&&window.attachEvent("onload",function(){t.go()}):t.go()};};
+
+try{(new g("https://zn3drcqv8ajkvhgn0-ugamsandbox.siteintercept.qualtrics.com/SIE/?Q_ZID=ZN_3dRCqv8AjkVHGN0")).start()}catch(i){}})();
+
+</script><div id='ZN_3dRCqv8AjkVHGN0'><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
+
+<!--END WEBSITE FEEDBACK SNIPPET-->
+
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo">
+            qUtilities
+        </div>
+
+        <nav>
+            <a href="">About Us</a>
+            <a href="">Services</a>
+            <a href="search.html">Search</a>
+            <a href="">Contact</a>
+        </nav>
+
+    </header>
+<div id="searchPanel" class="search-panel">
+
+    <button id="closeSearch">
+        ×
+    </button>
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Search"
+    >
+
+    <button id="searchBtn">
+        Go
+    </button>
+
+</div>
+  <section class="hero">
+
+    <img id="heroImage" src="images/slide1.jpg"/>
+
+    <div class="welcome-card-overlay">
+
+        <h1>
+            Welcome to qUtilities
+        </h1>
+
+        <p>
+            Reliable energy and water services
+            for communities across the country.
+        </p>
+
+    </div>
+
+    <div class="selector-card-overlay">
+
+        <h2>
+            Visit Your Local qUtilities
+        </h2>
+
+        <label>Location</label>
+
+        <select id="location">
+            <option>Arizona</option>
+            <option>Texas</option>
+        </select>
+
+        <label>Community</label>
+
+        <select id="community">
+            <option>Avondale</option>
+            <option>Palm Valley</option>
+        </select>
+
+        <button id="enterBtn">
+            Enter
+        </button>
+
+    </div>
+
+    <div class="carousel-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+    </div>
+
+</section>
+
+    <div class="selector-card1">
+
+        <h1>
+            About qUtilities
+        </h1>
+
+		<p>
+		qUtilities is committed to providing safe, reliable and cost-effective rate-regulated electric, natural gas, water, and wastewater treatment utility systems and electricity generation, transmission and distribution utility services to over 1.2 million customer connections, largely in North America. Read more about Liberty and how we are sustaining energy and water for life.
+		</p>
+
+    </div>
+
+    <footer>
+
+        <div class="footer-top">
+
+            <div class="footer-columns">
+
+                <div>
+                    <h4>Our Company</h4>
+                    <p>About Us</p>
+                    <p>Sustainability</p>
+                    <p>Careers</p>
+                </div>
+
+                <div>
+                    <h4>Services</h4>
+                    <p>Billing</p>
+                    <p>Water Quality</p>
+                    <p>Moving</p>
+                </div>
+
+                <div>
+                    <h4>Help</h4>
+                    <p>Customer Service</p>
+                    <p>FAQ</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+
+            <span>qUtilities © 2026</span>
+
+            <span>Cookie Preferences</span>
+
+        </div>
+
+    </footer>
+
+    <script>
+        $("#enterBtn").click(function () {
+
+            var community =
+                $("#community").val()
+                    .toLowerCase()
+                    .replace(" ", "-");
+
+            window.location =
+                "community/" + community + ".html";
+
+        });
+    </script>
+
+</body>
+
+</html>
