@@ -697,3 +697,963 @@ margin: -50px auto 50px;
 
     font-weight: 600;
 }
+
+/* =========================================
+   START / STOP SERVICE
+   ========================================= */
+
+.service-card {
+    background: #fff;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+
+/* Card image */
+.service-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* Card content */
+.service-card-content {
+    background: #f4f4f4;
+    min-height: 95px;
+    padding: 20px 25px;
+}
+
+
+/* Card title */
+.service-card-title {
+    font-size: 17px;
+    font-weight: 600;
+    color: #111827;
+    text-align: left;
+    margin-bottom: 18px;
+}
+
+
+/* Card body */
+.service-card-body {
+    text-align: center;
+}
+
+
+/* Inquire link */
+.service-inquire {
+    color: #8b5cf6;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+
+.service-inquire span {
+    font-size: 18px;
+    margin-left: 2px;
+}
+
+
+.service-inquire:hover {
+    color: #6d28d9;
+    text-decoration: none;
+}
+
+
+/* Heading */
+.container h1 {
+    color: #111827;
+    font-size: 28px;
+    font-weight: 500;
+}
+
+
+/* Mobile */
+@media (max-width: 767px) {
+
+    .service-card img {
+        height: 220px;
+    }
+
+    .container h1 {
+        font-size: 25px;
+    }
+
+}
+
+/* =========================================
+   START / STOP SERVICE SECTION
+   ========================================= */
+
+.service-section {
+    max-width: 1100px;
+    margin: 50px auto 70px;
+    padding: 0 25px;
+}
+
+
+/* Section heading */
+
+.service-section h2 {
+    margin: 0 0 45px;
+
+    text-align: center;
+
+    font-size: 30px;
+    font-weight: 500;
+
+    color: #222;
+}
+
+
+/* Two-column layout */
+
+.service-cards {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 30px;
+
+    width: 100%;
+}
+
+
+/* Individual card */
+
+.service-card {
+    background: #fff;
+
+    overflow: hidden;
+
+    border: 1px solid #e1e1e1;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+
+/* Card image */
+
+.service-card-image {
+    display: block;
+
+    width: 100%;
+    height: 220px;
+
+    object-fit: cover;
+}
+
+
+/* Card content */
+
+.service-card-content {
+    min-height: 105px;
+
+    padding: 20px 25px;
+
+    background: #f4f4f4;
+}
+
+
+/* Card title */
+
+.service-card-content h3 {
+    margin: 0 0 18px;
+
+    text-align: left;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    color: #222;
+}
+
+
+/* Inquire link */
+
+.service-inquire {
+    display: block;
+
+    width: 100%;
+
+    text-align: center;
+
+    color: #805ad5;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+
+/* Arrow */
+
+.service-inquire span {
+    display: inline-block;
+
+    margin-left: 3px;
+
+    font-size: 19px;
+
+    line-height: 10px;
+}
+
+
+/* Hover */
+
+.service-inquire:hover {
+    color: #5b21b6;
+
+    text-decoration: none;
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 767px) {
+
+    .service-section {
+        margin-top: 35px;
+        margin-bottom: 50px;
+
+        padding: 0 20px;
+    }
+
+    .service-section h2 {
+        margin-bottom: 30px;
+
+        font-size: 26px;
+    }
+
+    .service-cards {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+    .service-card-image {
+        height: 220px;
+    }
+
+}
+
+
+/* =========================================
+   WATER QUALITY PAGE
+   ========================================= */
+
+.water-quality-intro {
+    max-width: 900px;
+    margin: 50px auto 45px;
+    padding: 0 20px;
+}
+
+.water-quality-intro h1 {
+    margin-bottom: 20px;
+
+    font-size: 32px;
+    font-weight: 500;
+
+    color: #222;
+}
+
+.water-quality-intro .lead {
+    margin: 0;
+
+    font-size: 17px;
+    line-height: 1.7;
+
+    color: #555;
+}
+
+
+/* =========================================
+   WATER QUALITY CARDS
+   ========================================= */
+
+.water-quality-cards {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 30px;
+
+    max-width: 1100px;
+
+    margin: 0 auto 60px;
+    padding: 0 20px;
+}
+
+.water-quality-card {
+    background: #ffffff;
+
+    border: 1px solid #e1e1e1;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+    display: flex;
+}
+
+.water-quality-card-content {
+    width: 100%;
+
+    padding: 28px 25px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.water-quality-card h3 {
+    margin: 0 0 15px;
+
+    font-size: 20px;
+    line-height: 1.4;
+
+    font-weight: 600;
+
+    color: #222;
+}
+
+.water-quality-card p {
+    margin: 0 0 25px;
+
+    font-size: 15px;
+    line-height: 1.6;
+
+    color: #555;
+}
+
+
+/* CARD LINK */
+
+.water-quality-link {
+    display: block;
+
+    margin-top: auto;
+
+    text-align: center;
+
+    color: #805ad5;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    text-decoration: none;
+}
+
+.water-quality-link span {
+    margin-left: 3px;
+
+    font-size: 19px;
+
+    line-height: 10px;
+}
+
+.water-quality-link:hover {
+    color: #5b21b6;
+
+    text-decoration: none;
+}
+
+
+/* =========================================
+   COMMITMENT SECTION
+   ========================================= */
+
+.water-quality-commitment {
+    max-width: 1000px;
+
+    margin: 0 auto 40px;
+
+    padding: 0 20px;
+}
+
+.water-quality-commitment h2 {
+    margin-bottom: 20px;
+
+    font-size: 26px;
+    font-weight: 500;
+
+    color: #222;
+}
+
+.water-quality-commitment p {
+    margin-bottom: 18px;
+
+    font-size: 16px;
+    line-height: 1.7;
+
+    color: #555;
+}
+
+
+/* =========================================
+   QUESTIONS / ALERT
+   ========================================= */
+
+.water-quality-alert {
+    max-width: 1000px;
+
+    margin: 30px auto 60px;
+
+    padding: 25px 30px;
+
+    background: #f4f4f4;
+
+    border-left: 4px solid #805ad5;
+}
+
+.water-quality-alert strong {
+    display: block;
+
+    margin-bottom: 10px;
+
+    font-size: 18px;
+
+    color: #222;
+}
+
+.water-quality-alert p {
+    margin: 0 0 20px;
+
+    color: #555;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    .water-quality-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    .water-quality-intro {
+        margin-top: 35px;
+    }
+
+    .water-quality-intro h1 {
+        font-size: 28px;
+    }
+
+    .water-quality-intro .lead {
+        font-size: 16px;
+    }
+
+    .water-quality-cards {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+
+        padding: 0 15px;
+    }
+
+    .water-quality-card-content {
+        padding: 25px 20px;
+    }
+
+    .water-quality-commitment {
+        padding: 0 15px;
+    }
+
+    .water-quality-alert {
+        margin-left: 15px;
+        margin-right: 15px;
+
+        padding: 20px;
+    }
+
+}
+
+
+/* =========================================
+   PAY MY BILL
+   ========================================= */
+
+.pay-bill-intro {
+    max-width: 850px;
+    margin: 50px auto 45px;
+    padding: 0 20px;
+}
+
+.pay-bill-intro h2 {
+    margin-bottom: 20px;
+
+    font-size: 30px;
+    font-weight: 500;
+
+    color: #222;
+}
+
+.pay-bill-intro .lead {
+    margin: 0;
+
+    font-size: 17px;
+    line-height: 1.7;
+
+    color: #555;
+}
+
+
+/* =========================================
+   PAYMENT CARDS
+   ========================================= */
+
+.pay-bill-cards {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 30px;
+
+    max-width: 1100px;
+
+    margin: 0 auto 60px;
+
+    padding: 0 20px;
+}
+
+
+.pay-bill-card {
+    display: flex;
+
+    background: #ffffff;
+
+    border: 1px solid #e1e1e1;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+
+.pay-bill-card-content {
+    width: 100%;
+
+    padding: 30px 25px;
+
+    display: flex;
+    flex-direction: column;
+
+    text-align: center;
+}
+
+
+.pay-bill-card-content > i {
+    margin-bottom: 18px;
+
+    font-size: 34px;
+
+    color: #805ad5;
+}
+
+
+.pay-bill-card h3 {
+    margin: 0 0 15px;
+
+    font-size: 20px;
+    font-weight: 600;
+
+    color: #222;
+}
+
+
+.pay-bill-card p {
+    margin: 0 0 25px;
+
+    font-size: 15px;
+    line-height: 1.6;
+
+    color: #555;
+}
+
+
+/* PAYMENT LINK */
+
+.pay-bill-link {
+    display: block;
+
+    margin-top: auto;
+
+    color: #805ad5;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    text-decoration: none;
+}
+
+
+.pay-bill-link span {
+    margin-left: 3px;
+
+    font-size: 19px;
+}
+
+
+.pay-bill-link:hover {
+    color: #5b21b6;
+
+    text-decoration: none;
+}
+
+
+/* =========================================
+   PAYMENT METHODS
+   ========================================= */
+
+.payment-methods {
+    max-width: 1000px;
+
+    margin: 0 auto 50px;
+
+    padding: 0 20px;
+}
+
+
+.payment-methods h2 {
+    margin-bottom: 20px;
+
+    font-size: 26px;
+    font-weight: 500;
+
+    color: #222;
+}
+
+
+.payment-methods ul {
+    margin: 0;
+
+    padding-left: 25px;
+
+    color: #555;
+
+    line-height: 1.9;
+}
+
+
+/* =========================================
+   BILLING HELP
+   ========================================= */
+
+.billing-help {
+    max-width: 1000px;
+
+    margin: 0 auto 40px;
+
+    padding: 0 20px;
+}
+
+
+.billing-help h2 {
+    margin-bottom: 18px;
+
+    font-size: 26px;
+    font-weight: 500;
+
+    color: #222;
+}
+
+
+.billing-help p {
+    margin-bottom: 20px;
+
+    font-size: 16px;
+    line-height: 1.7;
+
+    color: #555;
+}
+
+
+/* =========================================
+   IMPORTANT ALERT
+   ========================================= */
+
+.pay-bill-alert {
+    max-width: 1000px;
+
+    margin: 30px auto 60px;
+
+    padding: 25px 30px;
+
+    background: #f4f4f4;
+
+    border-left: 4px solid #805ad5;
+}
+
+
+.pay-bill-alert strong {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 18px;
+
+    color: #222;
+}
+
+
+.pay-bill-alert p {
+    margin: 0;
+
+    color: #555;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    .pay-bill-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    .pay-bill-intro {
+        margin-top: 35px;
+    }
+
+    .pay-bill-intro h2 {
+        font-size: 26px;
+    }
+
+    .pay-bill-cards {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+
+        padding: 0 15px;
+    }
+
+    .payment-methods,
+    .billing-help {
+        padding: 0 15px;
+    }
+
+    .pay-bill-alert {
+        margin-left: 15px;
+        margin-right: 15px;
+
+        padding: 20px;
+    }
+
+}
+
+/* =========================================
+   COOKIE PREFERENCES
+   ========================================= */
+
+.cookie-preferences-content {
+    max-width: 950px;
+
+    margin: 50px auto 70px;
+
+    padding: 0 20px;
+}
+
+
+.cookie-preferences-content > h2 {
+    margin-bottom: 20px;
+
+    font-size: 30px;
+    font-weight: 500;
+
+    color: #222;
+}
+
+
+.cookie-preferences-content .lead {
+    margin-bottom: 45px;
+
+    font-size: 17px;
+    line-height: 1.7;
+
+    color: #555;
+}
+
+
+/* COOKIE SECTIONS */
+
+.cookie-section {
+    margin-bottom: 40px;
+
+    padding-bottom: 30px;
+
+    border-bottom: 1px solid #e5e5e5;
+}
+
+
+.cookie-section:last-child {
+    border-bottom: none;
+}
+
+
+.cookie-section h2 {
+    margin: 0 0 18px;
+
+    font-size: 24px;
+    font-weight: 500;
+
+    color: #222;
+}
+
+
+.cookie-section p {
+    margin: 0 0 18px;
+
+    font-size: 16px;
+    line-height: 1.7;
+
+    color: #555;
+}
+
+
+.cookie-section ul {
+    margin: 0;
+
+    padding-left: 25px;
+
+    color: #555;
+
+    line-height: 1.9;
+}
+
+
+.cookie-section li {
+    margin-bottom: 5px;
+}
+
+
+/* PREFERENCE BOX */
+
+.cookie-preference-box {
+    padding: 30px;
+
+    background: #f5f5f5;
+
+    border-left: 4px solid #805ad5;
+
+    border-bottom: none;
+}
+
+
+.cookie-preference-box h2 {
+    margin-top: 0;
+}
+
+
+/* BUTTON */
+
+.cookie-preference-button {
+    display: inline-block;
+
+    padding: 12px 22px;
+
+    border: none;
+    border-radius: 4px;
+
+    background: #805ad5;
+
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: background 0.2s ease;
+}
+
+
+.cookie-preference-button:hover {
+    background: #5b21b6;
+}
+
+
+/* PRIVACY LINK */
+
+.cookie-link {
+    color: #805ad5;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    text-decoration: none;
+}
+
+
+.cookie-link span {
+    margin-left: 3px;
+
+    font-size: 18px;
+}
+
+
+.cookie-link:hover {
+    color: #5b21b6;
+
+    text-decoration: none;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .cookie-preferences-content {
+        margin-top: 35px;
+
+        padding: 0 15px;
+    }
+
+    .cookie-preferences-content > h2 {
+        font-size: 26px;
+    }
+
+    .cookie-section h2 {
+        font-size: 22px;
+    }
+
+    .cookie-section p {
+        font-size: 15px;
+    }
+
+    .cookie-preference-box {
+        padding: 22px;
+    }
+
+    .cookie-preference-button {
+        width: 100%;
+    }
+
+}
