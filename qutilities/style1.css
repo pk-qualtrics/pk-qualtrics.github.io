@@ -701,3 +701,191 @@ margin: -50px auto 50px;
 
     margin-left: 10px;
 }
+
+
+.moving-intro {
+    max-width: 1100px;
+    margin: 50px auto 20px;
+    padding: 0 20px;
+}
+
+.moving-intro h1 {
+    margin-bottom: 10px;
+}
+
+.moving-intro p {
+    margin: 0;
+}
+
+
+/* Two-column card layout */
+.service-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+
+    max-width: 1100px;
+    margin: 40px auto 60px;
+    padding: 0 20px;
+}
+
+
+/* Individual card */
+.service-card {
+    background: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 8px;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* Card hover */
+.service-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+
+/* Card image */
+.service-card img {
+    width: 100%;
+    height: 260px;
+
+    object-fit: cover;
+    display: block;
+}
+
+
+/* Card content */
+.service-card-content {
+    padding: 25px;
+
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+
+    flex: 1;
+}
+
+
+/* Card heading */
+.service-card-content h3 {
+    margin: 0 0 12px;
+
+    font-size: 24px;
+    line-height: 1.3;
+
+    color: #1b4f72;
+}
+
+
+/* Card paragraph */
+.service-card-content p {
+    margin: 0 0 25px;
+
+    color: #555555;
+
+    line-height: 1.6;
+}
+
+
+/* Button */
+.service-button {
+    display: inline-block;
+
+    width: fit-content;
+
+    margin: auto auto 0;
+
+    padding: 12px 28px;
+
+    background-color: #1b6ca8;
+    color: #ffffff;
+
+    text-decoration: none;
+
+    border-radius: 5px;
+
+    font-weight: 600;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* Button hover */
+.service-button:hover {
+    background-color: #14527f;
+    color: #ffffff;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================
+   TABLET / MOBILE
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .service-cards {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+
+        margin-top: 30px;
+
+        padding: 0 15px;
+    }
+
+    .service-card img {
+        height: 220px;
+    }
+
+    .service-card-content {
+        padding: 22px;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+   ========================================= */
+
+@media (max-width: 480px) {
+
+    .moving-intro {
+        margin-top: 35px;
+    }
+
+    .moving-intro h1 {
+        font-size: 28px;
+    }
+
+    .service-card img {
+        height: 200px;
+    }
+
+    .service-card-content h3 {
+        font-size: 21px;
+    }
+
+    .service-button {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+}
+
