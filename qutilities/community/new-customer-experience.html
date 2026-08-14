@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>New Customer Experience | qUtilities</title>
+
+    <!-- Shared qUtilities CSS -->
+    <link
+        rel="stylesheet"
+        href="../community/style.css"
+    >
+
+    <style>
+
+        /* =========================================
+           NEWSLETTER PAGE
+        ========================================= */
+
+        .newsletter-page {
+            max-width: 1100px;
+            margin: 70px auto;
+            padding: 0 25px 100px;
+        }
+
+
+        /* =========================================
+           HERO
+        ========================================= */
+
+        .newsletter-hero {
+            background: #7c5cff;
+            color: #ffffff;
+            padding: 70px 60px;
+            border-radius: 10px;
+            margin-bottom: 50px;
+        }
+
+        .newsletter-hero .eyebrow {
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: .5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            opacity: .9;
+        }
+
+        .newsletter-hero h1 {
+            font-size: 48px;
+            line-height: 1.15;
+            margin: 0 0 20px;
+        }
+
+        .newsletter-hero p {
+            max-width: 750px;
+            font-size: 20px;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+
+        /* =========================================
+           CONTENT
+        ========================================= */
+
+        .newsletter-content {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .newsletter-content h2 {
+            font-size: 32px;
+            margin: 0 0 20px;
+        }
+
+        .newsletter-content p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 25px;
+        }
+
+
+        /* =========================================
+           FEATURE CARDS
+        ========================================= */
+
+        .newsletter-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin: 45px 0;
+        }
+
+        .newsletter-feature {
+            background: #ffffff;
+            padding: 30px;
+            border-left: 4px solid #7c5cff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .08);
+        }
+
+        .newsletter-feature h3 {
+            font-size: 20px;
+            margin: 0 0 12px;
+        }
+
+        .newsletter-feature p {
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+
+        /* =========================================
+           CALL TO ACTION
+        ========================================= */
+
+        .newsletter-cta {
+            background: #f5f2ff;
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .newsletter-cta h2 {
+            margin-bottom: 12px;
+        }
+
+        .newsletter-cta p {
+            margin-bottom: 25px;
+        }
+
+        .newsletter-button {
+            display: inline-block;
+            background: #7c5cff;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 14px 28px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .newsletter-button:hover {
+            background: #6848e8;
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 700px) {
+
+            .newsletter-page {
+                margin: 40px auto;
+                padding: 0 20px 70px;
+            }
+
+            .newsletter-hero {
+                padding: 45px 30px;
+            }
+
+            .newsletter-hero h1 {
+                font-size: 36px;
+            }
+
+            .newsletter-hero p {
+                font-size: 17px;
+            }
+
+            .newsletter-features {
+                grid-template-columns: 1fr;
+            }
+
+            .newsletter-content h2 {
+                font-size: 27px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="logo">
+            <a href="../index.html">qUtilities</a>
+        </div>
+
+        <nav>
+            <a href="">Community</a>
+            <a href="../search.html">Search</a>
+            <a href="">Contact Us</a>
+            <a href="">Alerts</a>
+            <a href="">My Account</a>
+        </nav>
+
+    </header>
+
+
+    <!-- NEWSLETTER -->
+
+    <main class="newsletter-page">
+
+
+        <!-- HERO -->
+
+        <section class="newsletter-hero">
+
+            <span class="eyebrow">
+                Customer Update
+            </span>
+
+            <h1>
+                New Customer Experience
+            </h1>
+
+            <p>
+                We have introduced a new customer portal designed
+                to simplify account management.
+            </p>
+
+        </section>
+
+
+        <!-- CONTENT -->
+
+        <section class="newsletter-content">
+
+            <h2>
+                A simpler way to manage your account
+            </h2>
+
+            <p>
+                We are excited to introduce a new customer portal
+                designed to make managing your qUtilities account
+                easier and more convenient.
+            </p>
+
+            <p>
+                The new experience brings important account tools
+                together in one place, helping you manage your
+                utility services with less effort.
+            </p>
+
+
+            <!-- FEATURES -->
+
+            <div class="newsletter-features">
+
+
+                <div class="newsletter-feature">
+
+                    <h3>
+                        Easy Account Access
+                    </h3>
+
+                    <p>
+                        Quickly access your account information
+                        and stay up to date with your utility
+                        services.
+                    </p>
+
+                </div>
+
+
+                <div class="newsletter-feature">
+
+                    <h3>
+                        Manage Your Services
+                    </h3>
+
+                    <p>
+                        Manage your utility services and account
+                        details through one convenient portal.
+                    </p>
+
+                </div>
+
+
+                <div class="newsletter-feature">
+
+                    <h3>
+                        A Better Experience
+                    </h3>
+
+                    <p>
+                        Enjoy a cleaner, simpler experience built
+                        around the way you manage your account.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+            <p>
+                The new customer portal is part of our continued
+                effort to improve the way we serve our customers.
+                We will continue to enhance the experience and
+                make it easier for you to manage your utility
+                account.
+            </p>
+
+
+            <!-- CTA -->
+
+            <div class="newsletter-cta">
+
+                <h2>
+                    Ready to explore the new experience?
+                </h2>
+
+                <p>
+                    Sign in to your qUtilities account and discover
+                    the new customer portal.
+                </p>
+
+                <a
+                    href="../index.html"
+                    class="newsletter-button"
+                >
+                    Visit Customer Portal
+                </a>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-top">
+
+            <div class="footer-columns">
+
+                <div>
+
+                    <h4>Our Company</h4>
+
+                    <p>About Us</p>
+                    <p>Sustainability</p>
+                    <p>Careers</p>
+
+                </div>
+
+
+                <div>
+
+                    <h4>Services</h4>
+
+                    <p>Billing</p>
+                    <p>Water Quality</p>
+                    <p>Moving</p>
+
+                </div>
+
+
+                <div>
+
+                    <h4>Help</h4>
+
+                    <p>Customer Service</p>
+                    <p>FAQ</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                qUtilities © 2026
+            </span>
+
+            <span>
+                <a href="../cookie-preferences.html">
+                    Cookie Preferences
+                </a>
+            </span>
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>
