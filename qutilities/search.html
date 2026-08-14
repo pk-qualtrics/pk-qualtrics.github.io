@@ -1,20 +1,25 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Search | qUtilities</title>
 
     <link rel="stylesheet" href="community/style.css">
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
     <style>
 
         .search-page {
             max-width: 1200px;
             margin: 60px auto;
-            padding: 0 20px;
+
+            /* Extra bottom space so results are not hidden
+               behind the fixed footer */
+            padding: 0 20px 220px;
         }
 
         .search-title {
@@ -33,6 +38,7 @@
             padding: 14px;
             border: 1px solid #ddd;
             border-radius: 4px;
+            font-size: 16px;
         }
 
         .search-bar button {
@@ -42,6 +48,11 @@
             padding: 14px 25px;
             border-radius: 4px;
             cursor: pointer;
+            font-size: 16px;
+        }
+
+        .search-bar button:hover {
+            background: #6848e8;
         }
 
         .result {
@@ -49,7 +60,7 @@
             padding: 25px;
             margin-bottom: 20px;
             border-left: 4px solid #7c5cff;
-            box-shadow: 0 2px 10px rgba(0,0,0,.08);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, .08);
         }
 
         .result h3 {
@@ -58,6 +69,11 @@
 
         .result h3 a {
             color: #7c5cff;
+            text-decoration: none;
+        }
+
+        .result h3 a:hover {
+            text-decoration: underline;
         }
 
         .category {
@@ -66,30 +82,119 @@
             margin-bottom: 10px;
         }
 
+        .result p {
+            margin-bottom: 0;
+        }
+
+        /*
+         * Fixed footer
+         */
         footer {
-position: fixed;
-bottom: 0;
-left: 0;
-width: 100%;
-}
+    position: relative;
+    width: 100%;
+    margin-top: 100px;
+        }
+
+        /*
+         * Optional extra spacer.
+         * The main spacing is already handled by
+         * .search-page padding-bottom.
+         */
+        .results-spacer {
+            height: 20px;
+        }
+
+        /*
+         * Mobile layout
+         */
+        @media (max-width: 600px) {
+
+            .search-page {
+                margin: 30px auto;
+                padding: 0 15px 250px;
+            }
+
+            .search-title {
+                font-size: 32px;
+            }
+
+            .search-bar {
+                flex-direction: column;
+            }
+
+            .search-bar button {
+                width: 100%;
+            }
+
+        }
 
     </style>
 
-<!--BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET-->
+    <!-- BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET -->
 
-<script type='text/javascript'>
+    <script type='text/javascript'>
 
-(function(){var g=function(g){
+        (function() {
 
-this.go=function(){var a=document.createElement("script");a.type="text/javascript";a.src=g;document.body&&document.body.appendChild(a)};
+            var g = function(g) {
 
-this.start=function(){var t=this;"complete"!==document.readyState?window.addEventListener?window.addEventListener("load",function(){t.go()},!1):window.attachEvent&&window.attachEvent("onload",function(){t.go()}):t.go()};};
+                this.go = function() {
 
-try{(new g("https://zn3drcqv8ajkvhgn0-ugamsandbox.siteintercept.qualtrics.com/SIE/?Q_ZID=ZN_3dRCqv8AjkVHGN0")).start()}catch(i){}})();
+                    var a = document.createElement("script");
 
-</script><div id='ZN_3dRCqv8AjkVHGN0'><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
+                    a.type = "text/javascript";
+                    a.src = g;
 
-<!--END WEBSITE FEEDBACK SNIPPET-->
+                    document.body &&
+                    document.body.appendChild(a);
+
+                };
+
+                this.start = function() {
+
+                    var t = this;
+
+                    "complete" !== document.readyState
+
+                        ? window.addEventListener
+                            ? window.addEventListener(
+                                "load",
+                                function() {
+                                    t.go();
+                                },
+                                false
+                            )
+                            : window.attachEvent &&
+                              window.attachEvent(
+                                "onload",
+                                function() {
+                                    t.go();
+                                }
+                              )
+
+                        : t.go();
+
+                };
+
+            };
+
+            try {
+
+                (new g(
+                    "https://zn3drcqv8ajkvhgn0-ugamsandbox.siteintercept.qualtrics.com/SIE/?Q_ZID=ZN_3dRCqv8AjkVHGN0"
+                )).start();
+
+            } catch(i) {}
+
+        })();
+
+    </script>
+
+    <div id='ZN_3dRCqv8AjkVHGN0'>
+        <!--DO NOT REMOVE-CONTENTS PLACED HERE-->
+    </div>
+
+    <!-- END WEBSITE FEEDBACK SNIPPET -->
 
 </head>
 
@@ -98,16 +203,16 @@ try{(new g("https://zn3drcqv8ajkvhgn0-ugamsandbox.siteintercept.qualtrics.com/SI
     <header>
 
         <div class="logo">
-             <a href="index.html">qUtilities</a>
+            <a href="index.html">qUtilities</a>
         </div>
 
         <nav>
- 
             <a href="#">Contact Us</a>
             <a href="#">My Account</a>
         </nav>
 
     </header>
+
 
     <section class="search-page">
 
@@ -115,12 +220,14 @@ try{(new g("https://zn3drcqv8ajkvhgn0-ugamsandbox.siteintercept.qualtrics.com/SI
             Search Results
         </h1>
 
+
         <div class="search-bar">
 
             <input
                 type="text"
                 id="searchBox"
                 placeholder="Search qUtilities..."
+                autocomplete="off"
             >
 
             <button id="searchBtn">
@@ -129,77 +236,179 @@ try{(new g("https://zn3drcqv8ajkvhgn0-ugamsandbox.siteintercept.qualtrics.com/SI
 
         </div>
 
+
         <div id="results"></div>
+
+
+        <!-- Extra space at the end of results -->
+        <div class="results-spacer"></div>
 
     </section>
 
-<script>
 
-const searchData = [
+    <script>
 
-{
-    title: "Community Investment Program",
-    url: "content/community-investment.html",
-    category: "News & Events",
-    description: "Learn how qUtilities is supporting local communities."
-},
+        const searchData = [
 
-{
-    title: "Water Conservation Tips",
-    url: "content/water-conservation.html",
-    category: "Smart Water Use",
-    description: "Helpful guidance to reduce household water consumption."
-},
+            {
+                title: "Community Investment Program",
+                url: "content/community-investment.html",
+                category: "News & Events",
+                description:
+                    "Learn how qUtilities is supporting local communities."
+            },
 
-{
-    title: "Emergency Preparedness Guide",
-    url: "content/emergency-preparedness.html",
-    category: "Safety",
-    description: "Resources and planning tips for utility emergencies."
-},
+            {
+                title: "Water Conservation Tips",
+                url: "content/water-conservation.html",
+                category: "Smart Water Use",
+                description:
+                    "Helpful guidance to reduce household water consumption."
+            },
 
-{
-    title: "Pay My Bill",
-    url: "pay-my-bill.html",
-    category: "Customer Service",
-    description: "Manage utility payments securely online."
-},
+            {
+                title: "Emergency Preparedness Guide",
+                url: "content/emergency-preparedness.html",
+                category: "Safety",
+                description:
+                    "Resources and planning tips for utility emergencies."
+            },
 
-{
-    title: "Moving Services",
-    url: "moving.html",
-    category: "Customer Service",
-    description: "Start, stop or transfer utility service."
-},
+            {
+                title: "Pay My Bill",
+                url: "pay-my-bill.html",
+                category: "Customer Service",
+                description:
+                    "Manage utility payments securely online."
+            },
 
-{
-    title: "Water Quality Reports",
-    url: "water-quality.html",
-    category: "Water Quality",
-    description: "Annual testing and compliance reports."
-}
+            {
+                title: "Moving Services",
+                url: "moving.html",
+                category: "Customer Service",
+                description:
+                    "Start, stop or transfer utility service."
+            },
 
-];
+            {
+                title: "Water Quality Reports",
+                url: "water-quality.html",
+                category: "Water Quality",
+                description:
+                    "Annual testing and compliance reports."
+            }
 
-function performSearch(term){
+        ];
 
-    let html = "";
 
-    searchData.forEach(function(item){
+        function performSearch(term) {
 
-        if(
-            item.title.toLowerCase().includes(term) ||
-            item.description.toLowerCase().includes(term) ||
-            item.category.toLowerCase().includes(term)
-        ){
+            let html = "";
 
-            html += `
+            const cleanTerm = term.trim().toLowerCase();
+
+
+            /*
+             * If the search box is empty,
+             * show all results.
+             */
+            if (cleanTerm === "") {
+
+                searchData.forEach(function(item) {
+
+                    html += createResult(item);
+
+                });
+
+            } else {
+
+                searchData.forEach(function(item) {
+
+                    if (
+
+                        item.title
+                            .toLowerCase()
+                            .includes(cleanTerm)
+
+                        ||
+
+                        item.description
+                            .toLowerCase()
+                            .includes(cleanTerm)
+
+                        ||
+
+                        item.category
+                            .toLowerCase()
+                            .includes(cleanTerm)
+
+                    ) {
+
+                        html += createResult(item);
+
+                    }
+
+                });
+
+            }
+
+
+            /*
+             * No results
+             */
+            if (html === "") {
+
+                html = `
+                    <div class="result">
+
+                        <h3>No results found</h3>
+
+                        <p>
+                            Please try another search term.
+                        </p>
+
+                    </div>
+                `;
+
+            }
+
+
+            $("#results").html(html);
+
+
+            /*
+             * Update page title
+             */
+            if (cleanTerm === "") {
+
+                $("#searchTitle").text("Search Results");
+
+            } else {
+
+                $("#searchTitle").text(
+                    'Search Results for "' + term.trim() + '"'
+                );
+
+            }
+
+        }
+
+
+        /*
+         * Create individual search result
+         */
+        function createResult(item) {
+
+            return `
+
                 <div class="result">
 
                     <h3>
+
                         <a href="${item.url}">
                             ${item.title}
                         </a>
+
                     </h3>
 
                     <div class="category">
@@ -211,60 +420,85 @@ function performSearch(term){
                     </p>
 
                 </div>
+
             `;
+
         }
 
-    });
 
-    if(html === ""){
+        /*
+         * Get search term from URL
+         */
+        const params =
+            new URLSearchParams(window.location.search);
 
-        html = `
-            <div class="result">
-                <h3>No results found</h3>
-                <p>Please try another search term.</p>
-            </div>
-        `;
-    }
+        const searchTerm =
+            params.get("q") || "";
 
-    $("#results").html(html);
 
-    $("#searchTitle").text(
-        'Search Results for "' + term + '"'
-    );
-}
+        /*
+         * Put URL search term into input
+         */
+        $("#searchBox").val(searchTerm);
 
-const params =
-    new URLSearchParams(window.location.search);
 
-const searchTerm =
-    params.get("q") || "";
+        /*
+         * Run search when page loads
+         */
+        performSearch(searchTerm);
 
-$("#searchBox").val(searchTerm);
 
-if(searchTerm !== ""){
-    performSearch(searchTerm.toLowerCase());
-}
+        /*
+         * Search button
+         */
+        $("#searchBtn").click(function() {
 
-$("#searchBtn").click(function(){
+            const term =
+                $("#searchBox").val().trim();
 
-    const term =
-        $("#searchBox").val().toLowerCase();
 
-    performSearch(term);
+            /*
+             * Update URL
+             */
+            const newUrl =
+                term === ""
+                    ? window.location.pathname
+                    : window.location.pathname +
+                      "?q=" +
+                      encodeURIComponent(term);
 
-});
 
-$("#searchBox").keypress(function(e){
+            window.history.pushState(
+                {},
+                "",
+                newUrl
+            );
 
-    if(e.which === 13){
 
-        $("#searchBtn").click();
+            /*
+             * Perform search
+             */
+            performSearch(term);
 
-    }
+        });
 
-});
 
-</script>
+        /*
+         * Search when pressing Enter
+         */
+        $("#searchBox").keypress(function(e) {
+
+            if (e.which === 13) {
+
+                $("#searchBtn").click();
+
+            }
+
+        });
+
+    </script>
+
+
     <footer>
 
         <div class="footer-top">
@@ -272,38 +506,57 @@ $("#searchBox").keypress(function(e){
             <div class="footer-columns">
 
                 <div>
+
                     <h4>Our Company</h4>
+
                     <p>About Us</p>
                     <p>Sustainability</p>
                     <p>Careers</p>
+
                 </div>
 
+
                 <div>
+
                     <h4>Services</h4>
+
                     <p>Billing</p>
                     <p>Water Quality</p>
                     <p>Moving</p>
+
                 </div>
 
+
                 <div>
+
                     <h4>Help</h4>
+
                     <p>Customer Service</p>
                     <p>FAQ</p>
+
                 </div>
 
             </div>
 
         </div>
 
+
         <div class="footer-bottom">
 
-            <span>qUtilities © 2026</span>
+            <span>
+                qUtilities © 2026
+            </span>
 
-            <span><a href="cookie-preferences.html">Cookie Preferences</a></span>
+            <span>
+                <a href="cookie-preferences.html">
+                    Cookie Preferences
+                </a>
+            </span>
 
         </div>
 
     </footer>
+
 </body>
 
 </html>
