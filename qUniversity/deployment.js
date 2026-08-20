@@ -1,6 +1,3 @@
-<!--BEGIN QUALTRICS WEBSITE FEEDBACK SNIPPET-->
- 
-<script type='text/javascript'>
  
 (function(){var g=function(g){
  
@@ -10,6 +7,6 @@ this.start=function(){var t=this;"complete"!==document.readyState?window.addEven
  
 try{(new g("https://zn2qptlrfvbclybca-ugamsandbox.siteintercept.qualtrics.com/SIE/?Q_ZID=ZN_2QPTLrfVBclybcA")).…
  
-</script><div id='ZN_2QPTLrfVBclybcA'><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
+<div id='ZN_2QPTLrfVBclybcA'><!--DO NOT REMOVE-CONTENTS PLACED HERE--></div>
  
-<!--END WEBSITE FEEDBACK SNIPPET-->
+
